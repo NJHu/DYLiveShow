@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DYLiveShow_Example' do
+  pod 'DYLiveShow', :path => '../'
+
+  target 'DYLiveShow_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
