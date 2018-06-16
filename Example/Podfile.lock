@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (4.7.2)
+  - DYLiveShow (1.0.0):
+    - Alamofire
+    - Masonry
+    - MJRefresh
+    - NJKit
+    - SDWebImage
+  - Masonry (1.1.0)
+  - MJRefresh (3.1.15.3)
+  - NJKit (1.0.7):
+    - Alamofire
+    - Masonry
+    - MJRefresh
+    - SDWebImage
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
+
+DEPENDENCIES:
+  - DYLiveShow (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Masonry
+    - MJRefresh
+    - SDWebImage
+  https://github.com/NJHu/NJSpecs.git:
+    - NJKit
+
+EXTERNAL SOURCES:
+  DYLiveShow:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  DYLiveShow: 49267f2b1603746b6c4b1e935fef8c3430c01359
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  NJKit: 7ed980d13cb3f28d3569df5286fef6a1ebf35fed
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+
+PODFILE CHECKSUM: f2e0f7c84ac0e068fb2c119526ff54089c77fa04
+
+COCOAPODS: 1.5.3

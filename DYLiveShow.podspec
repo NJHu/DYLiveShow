@@ -1,42 +1,64 @@
-#
-# Be sure to run `pod lib lint DYLiveShow.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
+
 
 Pod::Spec.new do |s|
-  s.name             = 'DYLiveShow'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of DYLiveShow.'
+s.name             = 'DYLiveShow'
+s.version          = '1.0.0'
+s.summary          = 'DYLiveShow, DYLiveShow'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+s.description      = <<-DESC
+DYLiveShow, DYLiveShow, DYLiveShow, DYLiveShow, DYLiveShow, DYLiveShow, DYLiveShow
+DESC
 
-  s.homepage         = 'https://github.com/njhu/DYLiveShow'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'njhu' => '64hp@163.com' }
-  s.source           = { :git => 'https://github.com/njhu/DYLiveShow.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+s.homepage         = 'https://github.com/njhu/DYLiveShow'
 
-  s.ios.deployment_target = '8.0'
+s.license          = { :type => 'MIT', :file => 'LICENSE' }
+s.author           = { 'njhu' => '64hp@163.com' }
+#s.source           = { :git => 'https://github.com/njhu/DYLiveShow.git', :tag => s.version.to_s }
+s.source           = { :git => 'https://github.com/njhu/DYLiveShow.git', :branch =>'master' }
 
-  s.source_files = 'DYLiveShow/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'DYLiveShow' => ['DYLiveShow/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+s.ios.deployment_target = '10.3'
+
+# 调试开发打开注释
+s.source_files = 'DYLiveShow/Classes/**/*'
+
+# 上线打开注释
+#二级目录
+
+#s.subspec 'Controller' do |ss|
+#    ss.source_files = 'DYLiveShow/Classes/Controller/*.{swift,xib}'
+#end
+#
+#s.subspec 'Model' do |ss|
+#    ss.source_files = 'DYLiveShow/Classes/Model/*.{swift}'
+#end
+#
+#s.subspec 'View' do |ss|
+#    ss.source_files = 'DYLiveShow/Classes/View/*.{swift,xib}'
+#end
+#
+#s.subspec 'ViewModel' do |ss|
+#    ss.source_files = 'DYLiveShow/Classes/ViewModel/*.{swift}'
+#end
+#
+#s.subspec 'Other' do |ss|
+#    ss.source_files = 'DYLiveShow/Classes/Other/*.{swift}'
+#end
+
+#二级目录
+
+s.resource_bundles = {
+'DYLiveShow' => ['DYLiveShow/Assets/**/*.{plist,webp,png,xcassets}']
+}
+
+#s.resources     = 'DYLiveShow/**/*.{xcassets}'
+
+s.dependency 'NJKit'
+s.frameworks   = 'UIKit'
+s.dependency 'Masonry'
+s.dependency 'SDWebImage'
+s.dependency 'MJRefresh'
+s.dependency 'Alamofire'
+
 end
