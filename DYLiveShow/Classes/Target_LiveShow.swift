@@ -15,8 +15,8 @@ import NJKit
         let childController = DYLiveShowViewController()
         let nav = NJNavigationController(rootViewController: childController)
         
-        childController.tabBarItem.image = UIImage.nj_imageFromXcassets(name: "btn_home_normal", bundleClass: Target_LiveShow.self)
-        childController.tabBarItem.selectedImage = UIImage.nj_imageFromXcassets(name: "btn_home_selected", bundleClass: Target_LiveShow.self)
+        childController.tabBarItem.image = UIImage.nj_image(name: "btn_home_normal", bundleClass: Target_LiveShow.self)
+        childController.tabBarItem.selectedImage = UIImage.nj_image(name: "btn_home_selected", bundleClass: Target_LiveShow.self)
         childController.tabBarItem.title = "直播"
         childController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -3);
         
