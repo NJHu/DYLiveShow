@@ -19,6 +19,6 @@ class DYLiveShowViewController: NJViewController {
         nj_isBackActionBtnHidden = true
         nj_navigationBar.isHidden = true
         view.addSubview(searchBarView)
-        searchBarView.makeco
+//        searchBarView.makeco
     }
 }
