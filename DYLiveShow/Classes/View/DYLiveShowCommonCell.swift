@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class DYLiveShowCommonCell: UICollectionViewCell {
     @IBOutlet weak var liveCoverImageView: UIImageView!
@@ -18,6 +19,9 @@ class DYLiveShowCommonCell: UICollectionViewCell {
             nickNameLabel.text = liveShow?.nickname
             huoLabel.text = liveShow?.hn
             roomNameLabel.text = liveShow?.room_name
+            if let imageUrl = URL(string: liveShow?.room_src ?? "") {
+                liveCoverImageView.af_setImage(withURL: imageUrl)
+            }
         }
     }
     override init(frame: CGRect) {
