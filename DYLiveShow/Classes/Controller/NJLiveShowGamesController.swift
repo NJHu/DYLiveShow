@@ -10,13 +10,13 @@ import NJKit
 import SwiftyJSON
 import MJRefresh
 
-class NJLiveShowCategorysController: NJRefreshCollectionViewController {
+class NJLiveShowGamesController: NJRefreshCollectionViewController {
     
     private var categoryList: [DYLiveShowCategory] = [DYLiveShowCategory]()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        title = "推荐"
+        title = "游戏"
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -70,7 +70,7 @@ class NJLiveShowCategorysController: NJRefreshCollectionViewController {
     }
 }
 
-extension NJLiveShowCategorysController {
+extension NJLiveShowGamesController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categoryList.count
     }
