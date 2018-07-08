@@ -21,6 +21,8 @@ class DYLiveShowCommonCell: UICollectionViewCell {
             roomNameLabel.text = liveShow?.room_name
             if let imageUrl = URL(string: liveShow?.room_src ?? "") {
                 liveCoverImageView.af_setImage(withURL: imageUrl)
+            }else {
+                liveCoverImageView.image = nil
             }
         }
     }

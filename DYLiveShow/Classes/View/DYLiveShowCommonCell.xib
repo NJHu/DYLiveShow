@@ -22,12 +22,12 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lY5-lF-Dle">
                         <rect key="frame" x="0.0" y="0.0" width="273" height="173"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-CE-SOx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-CE-SOx">
                                 <rect key="frame" x="0.0" y="0.0" width="273" height="139"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vf-Oy-ZIE">
-                                <rect key="frame" x="10" y="139" width="183" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="5" y="139" width="188" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -57,7 +57,7 @@
                             <constraint firstAttribute="bottom" secondItem="1vf-Oy-ZIE" secondAttribute="bottom" id="6xP-ng-Eyj"/>
                             <constraint firstItem="Bnd-Gj-wrW" firstAttribute="leading" secondItem="FQt-CE-SOx" secondAttribute="leading" constant="5" id="9zR-xJ-GYi"/>
                             <constraint firstAttribute="bottom" secondItem="v8v-0H-qv0" secondAttribute="bottom" id="F2y-42-5ED"/>
-                            <constraint firstItem="1vf-Oy-ZIE" firstAttribute="leading" secondItem="lY5-lF-Dle" secondAttribute="leading" constant="10" id="GU6-iZ-CEN"/>
+                            <constraint firstItem="1vf-Oy-ZIE" firstAttribute="leading" secondItem="lY5-lF-Dle" secondAttribute="leading" constant="5" id="GU6-iZ-CEN"/>
                             <constraint firstItem="PHO-sk-LrK" firstAttribute="trailing" secondItem="FQt-CE-SOx" secondAttribute="trailing" constant="-5" id="Gqu-D2-58W"/>
                             <constraint firstItem="v8v-0H-qv0" firstAttribute="leading" secondItem="1vf-Oy-ZIE" secondAttribute="trailing" constant="10" id="MpC-tH-Klr"/>
                             <constraint firstItem="1vf-Oy-ZIE" firstAttribute="top" secondItem="FQt-CE-SOx" secondAttribute="bottom" id="ddD-3R-n0k"/>

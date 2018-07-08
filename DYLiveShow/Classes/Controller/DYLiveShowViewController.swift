@@ -25,6 +25,9 @@ class DYLiveShowViewController: NJTitlesListsController {
     override open var titleBtnSelectedColor: UIColor {
         return UIColor.red
     }
+    override var firstShowIndex: Int {
+        return 1
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // navBar
@@ -36,40 +39,20 @@ class DYLiveShowViewController: NJTitlesListsController {
         titleScrollView.frame.origin = CGPoint(x: 0, y: 44 + UIApplication.shared.statusBarFrame.height)
         titleScrollView.backgroundColor = UIColor.orange
     }
-    open override func nj_addChildControllers() {
-        let 分类 = DYLiveCommonCategoryController()
-        分类.title = "分类"
-        addChildViewController(分类)
-        let 全部 = DYLiveCommonCategoryController()
-        全部.title = "全部"
-        addChildViewController(全部)
-        let 推荐 = DYLiveCommonCategoryController()
-        推荐.title = "推荐"
-        addChildViewController(推荐)
-        let 刺激战场 = DYLiveCommonCategoryController()
-        刺激战场.title = "刺激战场"
-        addChildViewController(刺激战场)
-        let 绝地求生 = DYLiveCommonCategoryController()
-        绝地求生.title = "绝地求生"
-        addChildViewController(绝地求生)
-        let 测试 = DYLiveCommonCategoryController()
-        测试.title = "测试"
-        addChildViewController(测试)
-        let dota2 = DYLiveCommonCategoryController()
-        dota2.title = "dota2"
-        addChildViewController(dota2)
-        let 星秀 = DYLiveCommonCategoryController()
-        星秀.title = "星秀"
-        addChildViewController(星秀)
-        let 音频直播 = DYLiveCommonCategoryController()
-        音频直播.title = "音频直播"
-        addChildViewController(音频直播)
-        let 颜值 = DYLiveCommonCategoryController()
-        颜值.title = "颜值"
-        addChildViewController(颜值)
-        let 热门游戏 = DYLiveCommonCategoryController()
-        热门游戏.title = "热门游戏"
-        addChildViewController(热门游戏)
+    override func nj_addChildControllers() {
+        
+        let categorys = [ ["全部": ""], ["颜值": "yz"], ["刺激战场": "jdqscjzc"], ["DOTA2": "DOTA2"], ["军事": "js"], ["DOTA": "DOTA"],
+                         ["绝地求生": "jdqs"], ["王者荣耀": "wzry"], ["英雄联盟": "LOL"], ["二次元": "ecy"], ["DNF": "DNF"],
+                         ["穿越火线": "CF"], ["星娱": "xingyu"], ["棋牌娱乐": "qipai"], ["户外": "HW"], ["鱼教": "yj"], ["美食": "ms"], ["企鹅直播": "qezb"], ["数码科技": "smkj"], ["脱口秀": "tkx"], ["颜值横屏": "XX"]]
+        
+        addChildViewController(NJLiveShowCategorysController())
+        
+        for dict in categorys {
+            let vc = DYLiveShowListNormalController()
+            vc.title = dict.first!.key
+            vc.idOrName = dict.first!.value
+            addChildViewController(vc)
+        }
     }
 }
 
@@ -91,3 +74,4 @@ extension DYLiveShowViewController {
         }
     }
 }
+
