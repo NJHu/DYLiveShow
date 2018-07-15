@@ -52,4 +52,10 @@ extension DYLiveShowListNormalController {
         
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let webVc = NJWebViewController()
+        webVc.gotoUrl = liveShowListViewModel.liveShowList[indexPath.item].url
+        navigationController?.pushViewController(webVc, animated: true)
+    }
 }
