@@ -8,6 +8,7 @@
 import UIKit
 import NJKit
 import MJRefresh
+import DYLiveRoom
 
 class DYLiveShowListNormalController: NJRefreshCollectionViewController {
     
@@ -24,7 +25,7 @@ class DYLiveShowListNormalController: NJRefreshCollectionViewController {
         layout.minimumInteritemSpacing = 5
         layout.scrollDirection = .vertical
         
-        collectionView.register(UINib(nibName: "DYLiveShowCommonCell", bundle: Bundle(for: DYLiveShowCommonCell.self)), forCellWithReuseIdentifier: "DYLiveShowCommonCell")
+        collectionView.register(UINib(nibName: "DYLiveShowCommonCell", bundle: Bundle.nj_curBundle(class: DYLiveShowCommonCell.self, bundleFile: "DYLiveShow")), forCellWithReuseIdentifier: "DYLiveShowCommonCell")
     }
     override func loadData(isMore: Bool) {
         liveShowListViewModel.loadCommonLiveShows(idOrName, isMore: isMore) {[weak self] (response: NJResponse, hasMore: Bool) in
@@ -54,8 +55,16 @@ extension DYLiveShowListNormalController {
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        let webVc = NJWebViewController()
-        webVc.gotoUrl = liveShowListViewModel.liveShowList[indexPath.item].url
-        navigationController?.pushViewController(webVc, animated: true)
+        
+        DYLiveStreamTool.sharedTool.nj_getStreamUrl(roomId: liveShowListViewModel.liveShowList[indexPath.item].room_id, success: {[weak self] (streamStr) in
+            
+            let liveRoom = NJDYLiveRoomController()
+            liveRoom.liveUrl = streamStr
+            self?.navigationController?.pushViewController(liveRoom, animated: true)
+            
+        }) { (error) in
+            
+            print(error)
+        }
     }
 }
