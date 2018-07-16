@@ -55,16 +55,8 @@ extension DYLiveShowListNormalController {
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        
-        DYLiveStreamTool.sharedTool.nj_getStreamUrl(roomId: liveShowListViewModel.liveShowList[indexPath.item].room_id, success: {[weak self] (streamStr) in
-            
             let liveRoom = NJDYLiveRoomController()
-            liveRoom.liveUrl = streamStr
-            self?.navigationController?.pushViewController(liveRoom, animated: true)
-            
-        }) { (error) in
-            
-            print(error)
-        }
+        liveRoom.roomId = liveShowListViewModel.liveShowList[indexPath.item].room_id
+            self.navigationController?.pushViewController(liveRoom, animated: true)
     }
 }
