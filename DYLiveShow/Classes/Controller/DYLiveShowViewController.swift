@@ -14,10 +14,10 @@ class DYLiveShowViewController: NJTitlesListsController {
     let headerView = UIView()
     private let searchBarView = NJDYSearchBarView.searchBarView()
     override open var contentViewY: Double {
-        return Double(44 + UIApplication.shared.statusBarFrame.height + 30)
+        return Double(44 + UIApplication.shared.statusBarFrame.height + 30 + 1)
     }
     override open var contentViewSize: CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - CGFloat(contentViewY) - tabBarController!.tabBar.bounds.height)
+        return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - CGFloat(contentViewY) - tabBarController!.tabBar.bounds.height - 1)
     }
     override open var titleBtnNormalColor: UIColor {
         return UIColor.white

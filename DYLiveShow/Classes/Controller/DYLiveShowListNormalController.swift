@@ -8,7 +8,8 @@
 import UIKit
 import NJKit
 import MJRefresh
-import DYLiveRoom
+import NJMediator
+import NJMediator_DYLiveRoom
 
 class DYLiveShowListNormalController: NJRefreshCollectionViewController {
     
@@ -20,7 +21,7 @@ class DYLiveShowListNormalController: NJRefreshCollectionViewController {
         
         let layout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = layout
-        layout.itemSize = CGSize(width: floor(UIScreen.main.bounds.width * 0.5 - 5.0), height: floor(UIScreen.main.bounds.width * 0.5 * 0.62))
+        layout.itemSize = CGSize(width: floor(UIScreen.main.bounds.width * 0.5 - 5.0), height: floor((UIScreen.main.bounds.width * 0.5 - 5.0) * 0.56 + 34))
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 5
         layout.scrollDirection = .vertical
@@ -55,8 +56,9 @@ extension DYLiveShowListNormalController {
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-            let liveRoom = NJDYLiveRoomController()
-        liveRoom.roomId = liveShowListViewModel.liveShowList[indexPath.item].room_id
+        let roomId = liveShowListViewModel.liveShowList[indexPath.item].room_id
+        if let liveRoom = NJMediator.sharedMediator.Mediator_DYLiveRoom_Controller(roomId: roomId) {
             self.navigationController?.pushViewController(liveRoom, animated: true)
+        }
     }
 }
