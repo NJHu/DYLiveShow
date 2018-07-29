@@ -14,13 +14,12 @@ class DYLiveShowCategoryCell: UICollectionViewCell {
     private let categoryImageView = UIImageView()
     private let categoryNameLabel = UILabel()
     public var liveShowCategory: DYLiveShowCategory? {
-        didSet {
-            if let imageUrl = URL(string: self.liveShowCategory?.game_icon ?? "") {
+        willSet {
+            categoryImageView.image = UIImage.nj_image(name: "live_cell_default_phone", bundleClass: DYLiveShowCategoryCell.self)
+            if let imageUrlStr = newValue?.game_icon as? String, let imageUrl = URL(string: imageUrlStr) {
                 categoryImageView.af_setImage(withURL: imageUrl)
-            }else {
-                categoryImageView.image = nil
             }
-            categoryNameLabel.text = self.liveShowCategory?.game_name
+            categoryNameLabel.text = newValue?.game_name
         }
     }
     override init(frame: CGRect) {

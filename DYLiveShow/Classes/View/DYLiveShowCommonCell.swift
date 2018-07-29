@@ -15,14 +15,13 @@ class DYLiveShowCommonCell: UICollectionViewCell {
     @IBOutlet weak var roomNameLabel: UILabel!
     @IBOutlet weak var locationBtn: UIButton!
     var liveShow: DYLiveShow? {
-        didSet {
-            nickNameLabel.text = liveShow?.nickname
-            huoLabel.text = liveShow?.hn
-            roomNameLabel.text = liveShow?.room_name
-            if let imageUrl = URL(string: liveShow?.room_src ?? "") {
+        willSet {
+            nickNameLabel.text = newValue?.nickname
+            huoLabel.text = newValue?.hn
+            roomNameLabel.text = newValue?.room_name
+            liveCoverImageView.image = UIImage.nj_image(name: "Img_default", bundleClass: DYLiveShowCommonCell.self)
+            if let imageUrlStr = newValue?.room_src as? String, let imageUrl = URL(string: imageUrlStr) {
                 liveCoverImageView.af_setImage(withURL: imageUrl)
-            }else {
-                liveCoverImageView.image = nil
             }
         }
     }
