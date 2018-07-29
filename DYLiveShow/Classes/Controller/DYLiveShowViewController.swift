@@ -75,3 +75,9 @@ extension DYLiveShowViewController {
     }
 }
 
+extension DYLiveShowViewController {
+    // MARK: - about keyboard orientation
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait;
+    }
+}
