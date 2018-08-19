@@ -13,7 +13,6 @@ let baseUrl = "http://open.douyucdn.cn/api/RoomApi/live"
 
 class DYLiveShowListViewModel: NSObject {
     var liveShowList: [DYLiveShow] = [DYLiveShow]()
-    private var offset: Int = 0
 }
 
 extension DYLiveShowListViewModel {
@@ -26,7 +25,7 @@ extension DYLiveShowListViewModel {
             }
         }
         
-        let offsetTemp = isMore ? (offset + 1) : 0
+        let offsetTemp = isMore ? (liveShowList.count) : 0
         
         NJNetworkTool.sharedTool.GET(urlStr, parameters:["offset": offsetTemp, "limit": 16]) {[weak self] (response: NJResponse) in
             
@@ -44,8 +43,6 @@ extension DYLiveShowListViewModel {
                 completion(response, true)
                 return
             }
-            
-            self?.offset = offsetTemp
             
             if !isMore {
                 self?.liveShowList.removeAll()
