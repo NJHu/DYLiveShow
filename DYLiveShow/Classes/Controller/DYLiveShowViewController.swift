@@ -45,13 +45,13 @@ class DYLiveShowViewController: NJTitlesListsController {
                          ["绝地求生": "jdqs"], ["王者荣耀": "wzry"], ["英雄联盟": "LOL"], ["二次元": "ecy"], ["DNF": "DNF"],
                          ["穿越火线": "CF"], ["星娱": "xingyu"], ["棋牌娱乐": "qipai"], ["户外": "HW"], ["鱼教": "yj"], ["美食": "ms"], ["企鹅直播": "qezb"], ["数码科技": "smkj"], ["脱口秀": "tkx"], ["颜值横屏": "XX"]]
         
-        addChildViewController(NJLiveShowGamesController())
+        addChild(NJLiveShowGamesController())
         
         for dict in categorys {
             let vc = DYLiveShowListNormalController()
             vc.title = dict.first!.key
             vc.idOrName = dict.first!.value
-            addChildViewController(vc)
+            addChild(vc)
         }
     }
 }
