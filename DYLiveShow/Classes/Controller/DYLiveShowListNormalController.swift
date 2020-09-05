@@ -38,7 +38,7 @@ class DYLiveShowListNormalController: NJRefreshCollectionViewController {
             }
             
             self?.collectionView.reloadData()
-            self?.collectionView.mj_footer.state = hasMore ? MJRefreshState.idle : MJRefreshState.noMoreData
+            self?.collectionView.mj_footer?.state = hasMore ? MJRefreshState.idle : MJRefreshState.noMoreData
         }
     }
 }

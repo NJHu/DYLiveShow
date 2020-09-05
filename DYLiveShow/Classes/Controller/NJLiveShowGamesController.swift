@@ -41,7 +41,7 @@ class NJLiveShowGamesController: NJRefreshCollectionViewController {
         let url = "http://open.douyucdn.cn/api/RoomApi/game"
         NJNetworkTool.sharedTool.GET(url, parameters: nil) {[weak self] (response: NJResponse) in
             self?.endHeaderFooterRefreshing()
-            self?.collectionView.mj_footer.state = MJRefreshState.noMoreData
+            self?.collectionView.mj_footer?.state = MJRefreshState.noMoreData
             
             if response.error != nil {
                 print(response.errorMsg)
